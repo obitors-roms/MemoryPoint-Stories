@@ -116,7 +116,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
               itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: EdgeInsets.only(left: 15.0, top: 8.0, bottom: 16.0),
+                  padding: EdgeInsets.only(right: 16),
                   child: InkWell(
                     child: Container(
                       width: widget.iconWidth,
