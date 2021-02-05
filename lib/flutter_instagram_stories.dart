@@ -158,7 +158,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
 
               if (index == 0 && widget.lastIconHighlight) {
                 return Padding(
-                  padding: EdgeInsets.only(left: 15.0, top: 8.0, bottom: 16.0),
+                  padding: EdgeInsets.only(right: 16.0,),
                   child: InkWell(
                     child: DottedBorder(
                       color: widget.lastIconHighlightColor,
@@ -244,7 +244,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                 );
               } else {
                 return Padding(
-                  padding: EdgeInsets.only(left: 15.0, top: 8.0, bottom: 16.0),
+                  padding: EdgeInsets.only(right: 16.0,),
                   child: InkWell(
                     child: Container(
                       decoration: widget.iconBoxDecoration,
