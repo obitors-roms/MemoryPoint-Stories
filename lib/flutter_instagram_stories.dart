@@ -119,7 +119,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                   padding: EdgeInsets.only(right: 16),
                   child: InkWell(
                       child: GestureDetector(
-                    onLongPress: () {
+                    onLongPress: () async {
                       await Firestore.instance
                           .runTransaction((Transaction myTransaction) async {
                         await myTransaction
