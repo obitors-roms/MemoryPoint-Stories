@@ -118,6 +118,14 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                 return Padding(
                   padding: EdgeInsets.only(right: 16),
                   child: InkWell(
+                      child: GestureDetector(
+                    onLongPress: () {
+                      await Firestore.instance
+                          .runTransaction((Transaction myTransaction) async {
+                        await myTransaction
+                            .delete(snapshot.data.documents[index].reference);
+                      });
+                    },
                     child: Container(
                       width: widget.iconWidth,
                       height: widget.iconHeight,
@@ -133,7 +141,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                         ],
                       ),
                     ),
-                  ),
+                  )),
                 );
               },
             );
@@ -158,7 +166,9 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
 
               if (index == 0 && widget.lastIconHighlight) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 16.0,),
+                  padding: EdgeInsets.only(
+                    right: 16.0,
+                  ),
                   child: InkWell(
                     child: DottedBorder(
                       color: widget.lastIconHighlightColor,
@@ -244,7 +254,9 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                 );
               } else {
                 return Padding(
-                  padding: EdgeInsets.only(right: 16.0,),
+                  padding: EdgeInsets.only(
+                    right: 16.0,
+                  ),
                   child: InkWell(
                     child: Container(
                       decoration: widget.iconBoxDecoration,
