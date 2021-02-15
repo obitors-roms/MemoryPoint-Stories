@@ -217,12 +217,7 @@ class _GroupedStoriesViewState extends State<GroupedStoriesView> {
   }
 
   _navigateBack() {
-    return Navigator.pushNamedAndRemoveUntil(
-      context,
-      '/',
-      (_) => false,
-      arguments: 'back_from_stories_view',
-    );
+    return Navigator.pop(context);
   }
 
   void _onStoryShow(StoryItem s) {}
